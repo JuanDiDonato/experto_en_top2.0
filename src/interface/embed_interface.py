@@ -7,9 +7,10 @@ from abc import ABC, abstractmethod  # Abstract Base Classes
 from discord.ext.commands import Context
 
 
-class EmbedInterface(ABC):
+class EmbedBuilderInterface(ABC):
 
     """
+    Interface for all embed builders
     Interfaz que define los metodos obligatorios para el servicio de Embed
 
     Es una interfaz porque los metodos no implementan codigo

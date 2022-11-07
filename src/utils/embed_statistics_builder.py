@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Python Modules
+import math
 import logging
 from operator import itemgetter
 
@@ -13,6 +14,11 @@ logging.basicConfig(format="%(levelname)s:%(message)s", level=logging.INFO)
 
 
 class EmbedStatisticsBuilder(EmbedBuilder):
+
+    """
+    Builder that extends of EmbedBuilder and add statistics support
+    """
+
     __statistics: Statistics
 
     def __init__(self) -> None:
@@ -50,7 +56,7 @@ class EmbedStatisticsBuilder(EmbedBuilder):
 
     def __set_win_rate(self):
         win_rate = self.__statistics.win_rate
-        self.with_field(name=f"Percentage of wins", value=f"{str(win_rate * 100)}%")
+        self.with_field(name=f"Percentage of wins", value=f"{str(math.trunc(win_rate * 100))}%")
 
     def __set_matches_played(self):
         matches: dict = self.__statistics.played

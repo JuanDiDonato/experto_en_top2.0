@@ -5,10 +5,11 @@ from discord import Embed
 from discord.ext.commands import Context
 
 # App modules
-from ..interface.embed_interface import EmbedInterface
+from ..interface.embed_interface import EmbedBuilderInterface
 
 
-class EmbedBuilder(EmbedInterface):
+class EmbedBuilder(EmbedBuilderInterface):
+
     """
     Esta clase implementa una interfaz, o otra clase con metodos abstrabtos,
     y se encarga de crear y lanzar embeds simples.
@@ -20,6 +21,7 @@ class EmbedBuilder(EmbedInterface):
         self.__embed = None
 
     def create_embed(self, title: str, description: str):
+
         """
         Crea una instancia de embed basica y la guarda
         """
@@ -37,6 +39,7 @@ class EmbedBuilder(EmbedInterface):
         return self
 
     def with_thumbnail(self, url: str):
+
         """
         Agrega una miniatura al mensaje
         """
@@ -45,6 +48,7 @@ class EmbedBuilder(EmbedInterface):
         return self
 
     async def send_embed(self, ctx: Context):
+
         """
         Lanza el embed al canal de discord
         """

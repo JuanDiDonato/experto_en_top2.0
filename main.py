@@ -15,6 +15,7 @@ embed_service: EmbedService = EmbedService()
 
 @bot.event
 async def on_ready():
+
     """
     When bot is coming up
     """
@@ -25,6 +26,7 @@ async def on_ready():
 
 @bot.command()
 async def statistics(ctx, discord_id: str) -> None:
+
     """
     :param discord_id: id of user in discord channel
     :param ctx: Discord channel context

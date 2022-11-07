@@ -2,6 +2,10 @@
 
 class Statistics:
 
+    """
+    Model of statistic
+    """
+
     def __init__(self) -> None:
         self.__matches: list[dict] = []
         self.__wins: dict = {}
@@ -10,11 +14,11 @@ class Statistics:
         self.__win_rate: float = 0
 
     @property
-    def matches(self) -> list[dict]:
+    def matches(self) -> list[dict]:  # Getter
         return self.__matches
 
     @matches.setter
-    def matches(self, matches: list[dict]) -> None:
+    def matches(self, matches: list[dict]) -> None:  # Setter
         self.__matches = matches
 
     @property

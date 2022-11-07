@@ -14,6 +14,11 @@ logging.basicConfig(format="%(levelname)s:%(message)s", level=logging.INFO)
 
 
 class RiotService:
+
+    """
+    Handle all request and data from Riot API
+    """
+
     __API_URL: str = "https://la2.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summoner}"
     __API_MATCHES_URL = "https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{puuid}/ids?startTime={time}"
     __API_MATCHES_DETAILS_URL = "https://americas.api.riotgames.com/lol/match/v5/matches/{match}"
@@ -54,7 +59,9 @@ class RiotService:
 
         """
         Get matches of summoner by puu id and set data in statistics class
+        :param summoner: Summoner to get matches
         """
+
         puu_id: str = summoner.puu_id
         matches: dict = {}
         statistics: Statistics = Statistics()

@@ -6,6 +6,11 @@ from .riot_service import RiotService
 
 
 class StatisticsService:
+
+    """
+    Handle statistics data
+    """
+
     __riot: RiotService = RiotService()
     __SUMMONER: str = "summoner"
     __STATISTICS: str = "statistics"
@@ -31,6 +36,11 @@ class StatisticsService:
         return summoner
 
     def __process_statistics(self, statistics: Statistics) -> None:
+
+        """
+        Process and set statistics of summoner
+        :param statistics: Statistics to process
+        """
 
         wins = {}
         defeat = {}

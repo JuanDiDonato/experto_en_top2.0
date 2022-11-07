@@ -7,6 +7,10 @@ from ..utils.embed_statistics_builder import EmbedStatisticsBuilder
 
 class EmbedService:
 
+    """
+    Send messages to discord channel
+    """
+
     def __init__(self) -> None:
         self.__embed_builder: EmbedStatisticsBuilder = EmbedStatisticsBuilder()
 
