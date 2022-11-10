@@ -39,7 +39,7 @@ class RiotLolService(RiotInterface):
         try:
             logging.info(f"Getting {summoner.summoner_name} matches")
             url: str = self.__API_MATCHES_URL.replace(self._PUU_ID_PARAM, puu_id) \
-                .replace(self._TIME_PARAM, str(self._THREE_DAYS_AGO))
+                .replace(self._TIME_PARAM, str(self._SEVEN_DAYS_AGO))
             response: Response = requests.get(url, self._URL_PARAMS)
             if response.status_code == 200:
                 matches = response.json()

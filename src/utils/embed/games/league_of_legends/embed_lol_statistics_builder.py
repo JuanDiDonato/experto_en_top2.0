@@ -41,7 +41,7 @@ class EmbedLolStatisticsBuilder(EmbedBuilder):
         if len(wins) > 0:
             most_wins = max(wins.items(), key=itemgetter(1))[0]  # Retorna con que campeon gano mas
             self.with_field(
-                name=f"Mayor porcentaje de victorias con {most_wins}",
+                name=f"Mayor cantidad de victorias con {most_wins}",
                 value=f" {wins[most_wins]} victorias",
             )
 
@@ -61,12 +61,24 @@ class EmbedLolStatisticsBuilder(EmbedBuilder):
     def __set_matches_played(self):
         matches: dict = self.__lol_statistics.played
         wins: dict = self.__lol_statistics.wins
+        one_match: list[str] = []
         for c, p in matches.items():
-            try:
-                win_rate = int((wins[c] / p) * 100)
-            except KeyError:
-                win_rate = 0
+            if p == 1:
+                one_match.append(c)
+            else:
+                try:
+                    win_rate = int((wins[c] / p) * 100)
+                except KeyError:
+                    win_rate = 0
 
-            self.with_field(
-                name=f"Participo en {p} partidas con {c}", value=f" Porcentaje de victorias: {win_rate} %"
-            )
+                self.with_field(
+                    name=f"Participo en {p} partidas con {c}", value=f" Porcentaje de victorias: {win_rate} %"
+                )
+
+        champs: str = " "
+        for c in one_match:
+            champs = champs + c + "\n"
+
+        self.with_field(
+            name=f"Jugo solo una partida con", value=champs
+        )

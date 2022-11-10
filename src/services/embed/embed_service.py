@@ -24,8 +24,8 @@ class EmbedService:
         """
         self.__embed_builder = EmbedLolStatisticsBuilder()
 
-        title: str = "Statistics"
-        description: str = f"Statistics of the last 3 days of " \
+        title: str = "Estadisticas"
+        description: str = f"Estadisticas de la ultima semana de " \
                            f"{summoner.summoner_name}"
 
         await self.__embed_builder.create_embed(title, description).with_statistics(summoner.lol_statistics) \
