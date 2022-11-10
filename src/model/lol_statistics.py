@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-class Statistics:
+class LolStatistics:
 
     """
-    Model of statistic
+    Model of League of Legends statistics
     """
 
     def __init__(self) -> None:

@@ -11,7 +11,9 @@ Es un refactor buscando aplicar principios de SOLID, codigo limpio, encapsulamie
 
 ### Funcionalidad
 
-El bot muestra las estadisticas de las partidas de League of Legends de un participante del canal de discord
+El bot muestra las estadisticas de las partidas de League of Legends o Team Fight Tactics de un participante del canal de discord
 donde este el bot.
 
 ![](https://github.com/JuanDiDonato/experto_en_top2.0/blob/main/embed.png) 
+---
+![](https://github.com/JuanDiDonato/experto_en_top2.0/blob/main/embed-tft.png) 

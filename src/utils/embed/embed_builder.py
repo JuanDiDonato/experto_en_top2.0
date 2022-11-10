@@ -5,7 +5,7 @@ from discord import Embed
 from discord.ext.commands import Context
 
 # App modules
-from ..interface.embed_interface import EmbedBuilderInterface
+from src.interface.embed_interface import EmbedBuilderInterface
 
 
 class EmbedBuilder(EmbedBuilderInterface):

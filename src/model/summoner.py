@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-from .statistics import Statistics
+from .lol_statistics import LolStatistics
+from .tft_statistics import TftStatistics
+
 
 class Summoner:
 
@@ -13,7 +15,8 @@ class Summoner:
         self.__summoner_name: str = summoner_name
         self.__puu_id: str = ""
         self.__account_id: str = ""
-        self.__statistics: Statistics
+        self.__lol_statistics: LolStatistics
+        self.__tft_statistics: TftStatistics
 
     # Getters
     @property
@@ -33,8 +36,12 @@ class Summoner:
         return self.__account_id
 
     @property
-    def statistics(self) -> Statistics:
-        return self.__statistics
+    def lol_statistics(self) -> LolStatistics:
+        return self.__lol_statistics
+
+    @property
+    def tft_statistics(self) -> TftStatistics:
+        return self.__tft_statistics
 
     # Setters
     @discord_id.setter
@@ -49,11 +56,10 @@ class Summoner:
     def account_id(self, account_id: str) -> None:
         self.__account_id = account_id
 
-    @statistics.setter
-    def statistics(self, statistics: Statistics):
-        self.__statistics = statistics
+    @lol_statistics.setter
+    def lol_statistics(self, lol_statistics: LolStatistics):
+        self.__lol_statistics = lol_statistics
 
-
-
-
-
+    @tft_statistics.setter
+    def tft_statistics(self, tft_statistics: TftStatistics) -> None:
+        self.__tft_statistics = tft_statistics
